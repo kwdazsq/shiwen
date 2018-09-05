@@ -37,8 +37,8 @@
 
 </el-menu>
 <el-radio-group v-model="isCollapse" class="switch">
-  <el-radio-button :label="false"><i class="arrow"  ></i>,</el-radio-button><br/>
-  <el-radio-button :label="true">收起</el-radio-button>
+  <el-radio-button :label="false"><i class="el-icon-d-arrow-right"  ></i></el-radio-button><br/>
+  <el-radio-button :label="true"><i class="el-icon-d-arrow-left"  ></i></el-radio-button>
 </el-radio-group>
 </div>
 </template>
@@ -78,11 +78,16 @@ background-size: 130px;
 }
 .arrow {
 	display: inline-block;
-    line-height: 40px;
-    width: 20px;
-    height: 20px;
-    background: url(http://qiniu.cdn-chuang.com/navleft-new-0.png) -116px 0 no-repeat;
-    background-size: 136px;
+    	line-height: 40px;
+    	width: 20px;
+    	height: 20px;
+    	/*background: url(http://qiniu.cdn-chuang.com/navleft-new-0.png) -116px 0 no-repeat;*/
+    	background-size: 136px;
+}
+.el-icon-arrow-left {
+	display: inline-block;
+    	width: 20px;
+    	height: 20px;
 }
 .switch {
 	position:fixed;
