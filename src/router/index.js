@@ -1,23 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Headers from '@/components/Home Page/Headers'
-import Aside from '@/components/Home Page/Aside'
-// import Individual from '@/components/Home Page/homepage/Individual'
+import Headers from '@/components/HomePage/Headers'
+import Aside from '@/components/HomePage/Aside'
+// import Individual from '@/components/HomePage/homepage/Individual'
 
 Vue.use(Router)
 
 export default new Router({
 	routes: [
   // 		{
-		//       	path: '/Home Page',
+		//       	path: '/HomePage',
 		//       	name: 'Headers',
 		//       	component: Headers
 		// },
 		{
-    		path:"/Home Page",
+    		path:"/HomePage",
     		name:"Aside",
     		component:Aside,
-    		redirect:"/Home Page/homepage/Individual",
+    		redirect:"/HomePage/homepage/Individual",
     		// children:[
 	    	// 	{
 	    	// 		name:"Individual",
