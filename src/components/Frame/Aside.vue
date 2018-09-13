@@ -1,6 +1,6 @@
 <template>
-    <div class="aside">
-        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+    <aside :class="{showSidebar:!isCollapse}">
+        <el-menu class="el-menu-vertical-demo" :collapse="isCollapse">
             <el-menu-item class="element" index="1">
                 <img src="../../assets/3.png" class="login">
                 <span slot="title" class="login-regist">登录/注册</span>
@@ -36,7 +36,7 @@
             <br/>
             <el-radio-button :label="true"><i class="el-icon-d-arrow-left"></i></el-radio-button>
         </el-radio-group>
-    </div>
+    </aside>
 </template>
 <script>
 export default {
@@ -58,18 +58,15 @@ export default {
 </script>
 <style scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
+    width: 150px;
     height: 100%;
 }
 
-.aside {
-    position: fixed;
-    width: 160px;
-    height: 100%;
-    z-index: 10;
+.el-menu-vertical-demo .element {
+    margin-bottom: 35px;
 }
 
-.login {
+.el-menu-vertical-demo .element .login {
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 50%;
@@ -78,7 +75,7 @@ export default {
     margin-left: -10px;
 }
 
-.home {
+.el-menu-vertical-demo .home {
     background-size: 130px;
     background-position: -2px -32px;
     width: 20px;
@@ -88,28 +85,10 @@ export default {
     line-height: 25px;
 }
 
-.arrow {
-    display: inline-block;
-    line-height: 40px;
-    width: 20px;
-    height: 20px;
-    background-size: 136px;
-}
-
-.el-icon-arrow-left {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-}
-
-.switch {
+.el-menu-vertical-demo .switch {
     position: fixed;
     bottom: 0px;
     left: 0px;
-}
-
-.element {
-    margin-bottom: 35px;
 }
 
 .el-menu--collapse {
@@ -117,7 +96,4 @@ export default {
     height: 100%;
 }
 
-.el-menu {
-    padding: 20px 0;
-}
 </style>

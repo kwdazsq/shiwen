@@ -1,22 +1,22 @@
 <template>
-    <el-row class="container">
-        <!-- 左侧导航 -->
-        <router-view name="aside"></router-view>
-        <!-- 右侧内容区 -->
-        <section class="content-container">
-            <div class="grid-content bg-purple-light">
+    <div class="container">
+        <div class="content">
+            <!-- 左侧导航 -->
+            <router-view name="aside"></router-view>
+            <!-- 右侧内容区 -->
+            <div class="right">
                 <!-- 头部 -->
-                <el-col :span="24">
-                    <router-view name="headers"></router-view>
-                </el-col>
+                <div class="right-headers">
+                    头部
+                    <!-- <router-view name="headers"></router-view> -->
+                </div>
                 <!-- 主体内容 -->
-                <el-col :span="24" class="main">
+                <div class="right-main">
                       <router-view></router-view>
-                </el-col>
+                </div>
             </div>
-        </section>
-        
-    </el-row>
+        </div>
+    </div>
 </template>
 <script>
 export default {
@@ -28,3 +28,17 @@ export default {
     }
 }
 </script>
+<style scoped>
+.container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
+.container .content {
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+}
+</style>
