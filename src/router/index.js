@@ -4,6 +4,8 @@ import Headers from '@/components/Frame/Headers'
 import Aside from '@/components/Frame/Aside'
 import Home from '@/components/HomePage/home'
 import Data from '@/components/HomePage/Details/Data'
+import LeftNav from '@/components/Frame/LeftNav'
+import Indexs from '@/components/HomePage/indexs'
 
 Vue.use(Router)
 
@@ -26,5 +28,22 @@ export default new Router({
 				},
 			]
 		},
-		]
+		{
+			path:"/indexs",
+			name:"indexs",
+			component:Indexs,
+			redirect:"/indexs/data",
+			children:[
+				{
+					path:"/indexs/data",
+					name:"首页",
+					components: {
+						default: Data,
+						headers: Headers,
+						aside: LeftNav
+					},
+				},
+			]
+		},
+	]
 })
