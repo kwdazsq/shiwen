@@ -1,6 +1,6 @@
 <template>
-    <aside :class="{showSidebar:!isCollapse}">
-        <el-menu class="el-menu-vertical-demo" :collapse="isCollapse">
+    <aside :class="{showSidebar:!collapsed}">
+        <el-menu class="el-menu-vertical-demo" :collapse="collapsed">
             <el-menu-item class="element" index="1">
                 <img src="../../assets/3.png" class="login">
                 <span slot="title" class="login-regist">登录/注册</span>
@@ -31,11 +31,10 @@
                 <span slot="title">退出登录</span>
             </el-menu-item>
         </el-menu>
-        <el-radio-group v-model="isCollapse" class="switch">
-            <el-radio-button :label="false"><i class="el-icon-d-arrow-right"></i></el-radio-button>
-            <br/>
-            <el-radio-button :label="true"><i class="el-icon-d-arrow-left"></i></el-radio-button>
-        </el-radio-group>
+        <div class="menu-toggle" @click.prevent="collapse">
+            <i class="el-icon-d-arrow-right" v-show="!collapsed" title="收起"></i>
+            <i class="el-icon-d-arrow-left" v-show="collapsed" title="展开"></i>
+        </div>
     </aside>
 </template>
 <script>
@@ -43,15 +42,12 @@ export default {
     name: 'Aside',
     data() {
         return {
-            isCollapse: true
+            collapsed: true
         };
     },
     methods: {
-        handleOpen(key, keyPath) {
-            console.log(key, keyPath);
-        },
-        handleClose(key, keyPath) {
-            console.log(key, keyPath);
+        collapse: function() {
+            this.collapsed = !this.collapsed;
         }
     }
 }
@@ -59,7 +55,15 @@ export default {
 <style scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 150px;
-    height: 100%;
+}
+
+.menu-toggle {
+    border-right: solid 1px #e6e6e6;
+    text-align: center;
+    height: 24%;
+    max-height: 150px;
+    line-height: 45px;
+    cursor: pointer;
 }
 
 .el-menu-vertical-demo .element {
@@ -85,15 +89,7 @@ export default {
     line-height: 25px;
 }
 
-.el-menu-vertical-demo .switch {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-}
-
 .el-menu--collapse {
     width: 59px;
-    height: 100%;
 }
-
 </style>

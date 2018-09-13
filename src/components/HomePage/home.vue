@@ -2,7 +2,9 @@
     <div class="container">
         <div class="content">
             <!-- 左侧导航 -->
-            <router-view name="aside"></router-view>
+            <div class="left">
+                <router-view name="aside"></router-view>
+            </div>
             <!-- 右侧内容区 -->
             <div class="right">
                 <!-- 头部 -->
@@ -40,5 +42,9 @@ export default {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
+}
+
+.container .content .left {
+    float: left;
 }
 </style>
