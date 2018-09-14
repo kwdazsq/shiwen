@@ -30,6 +30,22 @@
                 <i class="el-icon-setting"></i>
                 <span slot="title">退出登录</span>
             </el-menu-item>
+            <el-menu-item index="8">
+                <i class="el-icon-setting"></i>
+                <span slot="title">退出登录</span>
+            </el-menu-item>
+            <el-menu-item index="9">
+                <i class="el-icon-setting"></i>
+                <span slot="title">退出登录</span>
+            </el-menu-item>
+            <el-menu-item index="10">
+                <i class="el-icon-setting"></i>
+                <span slot="title">退出登录</span>
+            </el-menu-item>
+            <el-menu-item index="11">
+                <i class="el-icon-setting"></i>
+                <span slot="title">退出登录</span>
+            </el-menu-item>
         </el-menu>
         <div class="menu-toggle" @click.prevent="collapse">
             <i class="el-icon-d-arrow-right" v-show="!collapsed" title="收起"></i>
@@ -91,6 +107,7 @@ export default {
 .menu-toggle {
     border-right: solid 1px #e6e6e6;
     text-align: center;
+    background-color: #fff;
     line-height: 45px;
     cursor: pointer;
     width: 59px;
