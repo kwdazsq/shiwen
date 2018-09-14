@@ -57,15 +57,6 @@ export default {
     width: 150px;
 }
 
-.menu-toggle {
-    border-right: solid 1px #e6e6e6;
-    text-align: center;
-    height: 24%;
-    max-height: 150px;
-    line-height: 45px;
-    cursor: pointer;
-}
-
 .el-menu-vertical-demo .element {
     margin-bottom: 35px;
 }
@@ -91,5 +82,19 @@ export default {
 
 .el-menu--collapse {
     width: 59px;
+}
+
+.showSidebar .menu-toggle {
+    width: 150px;
+}
+
+.menu-toggle {
+    border-right: solid 1px #e6e6e6;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+    width: 59px;
+    position: fixed;
+    bottom: 0;
 }
 </style>
